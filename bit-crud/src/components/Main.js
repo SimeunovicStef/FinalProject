@@ -3,7 +3,7 @@ import React from 'react'
 const Main = (props) => {
     return (
         <main>
-            <h1>Main</h1>
+            <h1>Main TEST</h1>
         </main>
     )
 }
