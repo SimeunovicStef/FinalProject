@@ -12,7 +12,7 @@ class LoginForm extends React.Component {
             <div>
                 <h5>Login</h5>
                 <img src=''></img>
-                <h1>Sign in</h1>
+                <h1 className='title'>Sign in</h1>
                 <form>
                     <fieldset>
                         <legend>Email Address *</legend>
@@ -23,7 +23,7 @@ class LoginForm extends React.Component {
                         <input type='password' name='password' placeholder='Password' ></input>
                     </fieldset>
                     <input type='checkbox' name='remember' /><label>Remember me</label><br />
-                    <button>SIGN IN</button><br />
+                    <button className='sign'>SIGN IN</button><br />
                     <a>Forgot password?</a>
                     <a>Don't have an account? Sign Up</a>
                     {/* vodi ka registerform stranici */}

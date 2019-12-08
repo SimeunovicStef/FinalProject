@@ -11,3 +11,63 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* General */
+
+
+/* Header */
+nav {
+  background-color: #4154b3;
+}
+
+
+/* Main */
+
+.wraper {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  text-align: center;
+}
+
+input {
+  display: block;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.halfInput {
+  width: 50%;
+}
+
+.wholeInput {
+  width: 100%;
+}
+
+.sign {
+  background-color: #2278cf;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  padding: 7px;
+  border: none;
+}
+
+span {
+ float: right;
+ margin: 10px;
+}
+
+.checkbox {
+  display: inline;
+}
+
+label  {
+  padding-left: 10px;
+}
+
+/* Footer */

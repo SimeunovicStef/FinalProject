@@ -2,9 +2,15 @@ import React from 'react'
 
 const Header = (props) => {
     return (
-        <header>
-            <h1>Final Project</h1>
-        </header>
+    <nav>  
+        <div class="nav-wrapper">
+        <a href="#" class="brand-logo">CRUD</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Posts</a></li>
+                <li><a href="badges.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
     )
 }
 export default Header
