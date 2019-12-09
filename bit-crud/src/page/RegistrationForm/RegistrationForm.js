@@ -31,7 +31,7 @@ class RegistrationForm extends React.Component {
                     </Row>
 
                     <Row>
-                        <Input name='lastName' type='text' placeholder='Last Name *' className='input' />
+                        <Input name='lastName' type='text' placeholder='Email Address *' className='input' />
                         <Input name='password' type='password' placeholder='Password *' className='input last' />
 
                         <Checkbox onChange={(d) => console.log(d)} label="I want to receive inspiration, marketing promotions and update via email." />
