@@ -8,15 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-  return (
-    <>
-      <Header />
-
-      <Main />
-
-      <Footer />
-    </>
-  );
+  return (<> <Header /> <Main /> <Footer /> </>);
 }
 
 export default App;
