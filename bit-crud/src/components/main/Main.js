@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import RegisterForm from '../../page/RegisterForm';
-import LoginPage from '../../page/LoginPage'
+import LoginPage from '../../page/loginForm/LoginPage'
 
 const Main = (props) => {
     return (
