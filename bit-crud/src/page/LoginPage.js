@@ -2,7 +2,7 @@ import React from 'react'
 import Input from '../components/input/Input'
 import Button from '../components/button/Button'
 import Checkbox from '../components/checkbox/Checkbox'
-import Title from '../components/title/title'
+import Title from '../components/title/Title'
 
 
 
