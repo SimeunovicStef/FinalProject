@@ -14,7 +14,6 @@ class RegistrationForm extends React.Component {
         super(props)
         this.state = {
             posts: null
-
         }
     }
 
@@ -27,7 +26,7 @@ class RegistrationForm extends React.Component {
 
                     <Row>
                         <Input name='firstName' type='text' placeholder='First Name *' className='col s6 RegistrationForm__splitter input' />
-                        <Input name='lastName' type='text' placeholder='Last Name *' className='col s6 input' />
+                        < Input name='lastName' type='text' placeholder='Last Name *' className='col s6 input' />
                     </Row>
 
                     <Row>
