@@ -6,16 +6,24 @@ import Checkbox from '../../components/checkbox/Checkbox'
 import Icon from '../../components/icon/Icon'
 import Title from '../../components/Title/Title'
 import { Row } from '../../components/Row/Row'
-
 import "./RegistrationForm.scss";
+import { http } from '../../services/fetchService'
 
 class RegistrationForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            posts: null
+            posts: null,
+            name: '',
+            lastname: '',
+            email: '',
+            password: ''
         }
     }
+
+    // onSubmit = () => {
+    //     http.post('')
+    // }
 
     render() {
         return (
