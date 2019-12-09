@@ -39,28 +39,6 @@ nav {
   margin-right: auto;
 }
 
-input {
-  display: block;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: none;
-  border: 1px solid black;
-}
-
-
-.wholeInput {
-  width: 100%;
-}
-
-.sign {
-  background-color: #2278cf;
-  color: white;
-  border-radius: 10px;
-  width: 100%;
-  padding: 7px;
-  border: none;
-}
-
 span {
   float: right;
   margin: 10px;
