@@ -4,7 +4,7 @@ import Button from '../../components/button/Button'
 import Input from '../../components/input/Input'
 import Checkbox from '../../components/checkbox/Checkbox'
 import Icon from '../../components/icon/Icon'
-import Title from '../../components/title/Title'
+import Title from '../../components/Title/Title'
 import { Row } from '../../components/Row/Row'
 
 import "./RegistrationForm.scss";
