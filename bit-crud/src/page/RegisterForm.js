@@ -19,7 +19,7 @@ class RegisterForm extends React.Component {
 
         return (
             <>
-                <h5>Register</h5>
+
                 <div className='wraper'>
                     <Icon className='lockLogo' />
                     <Title title='Sign Up' className='title' />
