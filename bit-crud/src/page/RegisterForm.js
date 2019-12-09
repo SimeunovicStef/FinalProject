@@ -1,4 +1,9 @@
 import React from 'react'
+import Button from '../components/button/Button'
+import Input from '../components/input/Input'
+import Checkbox from '../components/checkbox/Checkbox'
+import Image from '../components/image/Image'
+import Title from '../components/title/title'
 
 class RegisterForm extends React.Component {
     constructor(props) {
@@ -12,21 +17,20 @@ class RegisterForm extends React.Component {
 
 
         return (
-            <div>
+            <main>
                 <h5>Register</h5>
                 <div className='wraper'>
-                <img src=''></img>
-                <h1 className='title'>Sign up</h1>
-                <input type='text' name='firstName' placeholder='First Name *' className='halfInput'></input>
-                <input type='text' name='lastName' placeholder='Last Name *' className='halfInput'></input><br />
-                <input type='email' name='email' placeholder='Email Address *' className='wholeInput'></input><br />
-                <input type='password' name='password' placeholder='Password *' className='wholeInput'></input><br />
-                <input type='checkbox' name='email updates' className='checkbox'></input>
-                <label>I want to receive inspiration, marketing promotions and updates via email.</label><br />
-                <button className='sign'>SING UP</button><br />
-                <span className=''>Already have an account? Sign in</span>
+                    <Image />
+                    <Title title='Sign Up' />
+                    <Input />
+                    <Input />
+                    <Input />
+                    <Input />
+                    <Checkbox onChange={(d) => console.log(d)} label="aasldkfj sdf" />
+                    <Button title='Sign Up' />
+                    <span className=''>Already have an account? Sign in</span>
                 </div>
-            </div>
+            </main>
         )
     }
 }
