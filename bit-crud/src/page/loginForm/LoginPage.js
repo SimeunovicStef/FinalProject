@@ -88,8 +88,8 @@ class LoginPage extends React.Component {
             <Icon className='lockLogo' />
             <Title title="Sign In" className="title" />
             <Row >
-              <Input name="email" type="text" placeholder="Email Address*" className='RegistrationForm__splitter input' required onChange={this.onChangeHandler} />
-              <Input name="password" type="password" placeholder="Password*" className='RegistrationForm__splitter input' required onChange={this.onChangeHandler} />
+              <Input name="email" type="text" placeholder="Email Address*" className='input' required onChange={this.onChangeHandler} />
+              <Input name="password" type="password" placeholder="Password*" className='input last' required onChange={this.onChangeHandler} />
             </Row>
             <Checkbox onChange={(d) => console.log(d)} label="Remember me" />
 
