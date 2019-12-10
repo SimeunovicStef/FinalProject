@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 // import './Input.css'
 
-const Input = (props) => (<input name={props.name} type={props.type} placeholder={props.placeholder} className={props.className} onChange={(event) => props.onChange(event.target.value)} value={props.value} />)
+const Input = (props) => (<input name={props.name} type={props.type} placeholder={props.placeholder} className={props.className} onChange={props.onChange} value={props.value} />)
 Input.defaultProps = {
     onChange: () => { }
     /*ili: f => f, */

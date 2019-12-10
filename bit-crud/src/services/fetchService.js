@@ -1,5 +1,4 @@
 import requestHeader from '../shared/constants'
-import registerEndpoint from '../shared/constants'
 
 class FetchService {
     get(url) {
@@ -10,12 +9,13 @@ class FetchService {
             .then(response => response.json())
     }
 
-    post(url) {
+    post(url, data) {
         return fetch(url, {
             method: 'post',
+            body: JSON.stringify(data),
             headers: requestHeader
         })
-        .then(response => response.json())
+            .then(response => response.json())
     }
 }
 
