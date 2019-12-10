@@ -34,38 +34,9 @@ nav {
 /* Main */
 
 .wraper {
-  width: 40%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
-}
-
-.title {
-  text-align: center;
-}
-
-input {
-  display: block;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: none;
-  border: 1px solid black;
-}
-
-.halfInput {
-  width: 48%;
-}
-
-.wholeInput {
-  width: 100%;
-}
-
-.sign {
-  background-color: #2278cf;
-  color: white;
-  border-radius: 10px;
-  width: 100%;
-  padding: 7px;
-  border: none;
 }
 
 span {

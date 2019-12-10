@@ -1,9 +1,15 @@
 import React from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
+
+import RegistrationForm from '../../page/RegistrationForm/RegistrationForm';
 
 const Main = (props) => {
     return (
-        <main>
-            <h1>Main TEST</h1>
+        <main className="container">
+            <Switch>
+                <Route path="/sign-up" component={RegistrationForm} />
+                <Redirect to="/sign-up" />
+            </Switch>
         </main>
     )
 }
