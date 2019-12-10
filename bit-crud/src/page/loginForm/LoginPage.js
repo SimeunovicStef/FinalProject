@@ -6,31 +6,32 @@ import Title from '../../components/title/Title'
 import Icon from '../../components/icon/Icon'
 import { Row } from '../../components/Row/Row'
 import { Link } from 'react-router-dom'
+import './login.scss'
 
 
 class LoginPage extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            email: "",
-            loginPassword: "",
-            errorMsg: "",
-            checkbox: false
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: "",
+      loginPassword: "",
+      errorMsg: "",
+      checkbox: false
 
-        }
     }
+  }
 
-    // onEmailChange = (event) =this.setState({email:event.target.value, error:''})
-    // onPassChange = (event) =this.setState({password:event.target.value, error:''})
+  // onEmailChange = (event) =this.setState({email:event.target.value, error:''})
+  // onPassChange = (event) =this.setState({password:event.target.value, error:''})
 
 
 
-    // onFormSubmitHandler = e => {
-    //     e.preventDefault();
-    // }
-    // onChangeInputHandler = e => {
-    //     this.setState({ [e.target.name]: e.target.value })
-    // }
+  // onFormSubmitHandler = e => {
+  //     e.preventDefault();
+  // }
+  // onChangeInputHandler = e => {
+  //     this.setState({ [e.target.name]: e.target.value })
+  // }
 
 
   loginHandler = event => {
@@ -77,33 +78,33 @@ class LoginPage extends React.Component {
   };
 
 
-    render() {
-const { errorMsg } = this.state;
-        return (
-            <div className='container'>
+  render() {
+    const { errorMsg } = this.state;
+    return (
+      <div className='container'>
 
-                <form className='col s12'>
-                    <div className='wraper'>
-                        <Icon className='lockLogo' />
-                        <Title title="Sign In" className="title" />
-                        <Row >
-                            <Input name="email" type="text" placeholder="Email Address*"  required onChange={this.onChangeHandler} />
-                            <Input name="password" type="password" placeholder="Password*" required onChange={this.onChangeHandler} />
-                        </Row>
-                        <Checkbox onChange={(d) => console.log(d)} label="Remember me" />
+        <form className='col s12'>
+          <div className='wraper RegistrationForm'>
+            <Icon className='lockLogo' />
+            <Title title="Sign In" className="title" />
+            <Row >
+              <Input name="email" type="text" placeholder="Email Address*" className='RegistrationForm__splitter input' required onChange={this.onChangeHandler} />
+              <Input name="password" type="password" placeholder="Password*" className='RegistrationForm__splitter input' required onChange={this.onChangeHandler} />
+            </Row>
+            <Checkbox onChange={(d) => console.log(d)} label="Remember me" />
 
-                        <Button title='Sign In' type="submit" onClick={this.loginHandler} name="action" />
-                        <Row >
-                            <a className="col 4">Forgot password?</a>
-                            <span className="col 4 offset-md-4"><Link to='/sign-up'>Don't have an account? Sign Up'</Link></span>
-                            <p className="red-text">{errorMsg} </p>
-                        </Row>
+            <Button title='Sign In' type="submit" onClick={this.loginHandler} name="action" />
+            <Row >
+              <a className="col 4">Forgot password?</a>
+              <span className="col 4 offset-md-4"><Link to='/sign-up'>Don't have an account? Sign Up'</Link></span>
+              <p className="red-text">{errorMsg} </p>
+            </Row>
 
-                    </div>
-                </form>
-            </div>
-        )
-    }
+          </div>
+        </form>
+      </div>
+    )
+  }
 }
 
 export default LoginPage
