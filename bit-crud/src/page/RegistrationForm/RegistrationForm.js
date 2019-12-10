@@ -7,6 +7,7 @@ import Icon from '../../components/icon/Icon'
 import Title from '../../components/title/Title'
 import { Row } from '../../components/Row/Row'
 import "./RegistrationForm.scss";
+
 import { http } from '../../services/fetchService'
 import { registerEndpoint } from '../../shared/constants'
 
