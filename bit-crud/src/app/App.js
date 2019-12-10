@@ -10,16 +10,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-  return (
-    <>
-      <Header />
 
+  return (<> <Header /> <Main /> <Footer /> </>);
 
-      <Main />
-
-      <Footer />
-    </>
-  );
 }
 
 export default App;
