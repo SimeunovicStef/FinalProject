@@ -8,7 +8,8 @@ const Input = (props) => (
         type={props.type}
         placeholder={props.placeholder}
         className={props.className}
-        onChange={(event) => props.onChange(event.target.value)}
+        onChange={props.onChange}
+        value={props.value}
     />
 )
 

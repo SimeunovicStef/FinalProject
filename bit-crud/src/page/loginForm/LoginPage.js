@@ -68,7 +68,7 @@ class LoginPage extends React.Component {
   };
 
   onChangeHandler = event => {
-    const elementId = event.target.id;
+    const elementId = event.target.email;
     const elementValue = event.target.value;
 
     this.setState({
@@ -78,7 +78,7 @@ class LoginPage extends React.Component {
 
 
     render() {
-// const { errorMsg } = this.state;
+const { errorMsg } = this.state;
         return (
             <div className='container'>
 
@@ -96,6 +96,7 @@ class LoginPage extends React.Component {
                         <Row >
                             <a className="col 4">Forgot password?</a>
                             <span className="col 4 offset-md-4"><Link to='/sign-up'>Don't have an account? Sign Up'</Link></span>
+                            <p className="red-text">{errorMsg} </p>
                         </Row>
 
                     </div>
