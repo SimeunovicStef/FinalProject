@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './Header.css'
 import { logOut } from '../../services/authServices'
-// import { createHashHistory } from 'history';
-import { Link } from 'react-router-dom'
+
+import { Link, withRouter } from 'react-router-dom'
 
 class Header extends Component {
   // constructor(props) {
@@ -37,4 +37,4 @@ class Header extends Component {
     )
   }
 }
-export default Header
+export default withRouter(Header)

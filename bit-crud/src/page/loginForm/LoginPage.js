@@ -7,13 +7,14 @@ import Icon from '../../components/icon/Icon'
 import { Row } from '../../components/Row/Row'
 import { Link } from 'react-router-dom'
 import './login.scss'
+import { sendLoginData } from '../../services/authServices'
 
 class LoginPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       email: "",
-      loginPassword: "",
+      password: "",
       errorMsg: "",
       checkbox: false
 
@@ -34,20 +35,21 @@ class LoginPage extends React.Component {
 
 
   loginHandler = event => {
-    const { email, loginPassword } = this.state;
+    event.preventDefault();
+
+    const { email, password } = this.state;
     const content = {
       email: email,
-      password: loginPassword
+      password: password
     };
 
-    event.preventDefault();
     this.sendLoginForm(content);
   };
 
   resetLoginForm = () => {
     this.setState({
       email: "",
-      loginPassword: "",
+      password: "",
       errorMsg: ""
     });
   };
@@ -55,7 +57,6 @@ class LoginPage extends React.Component {
   goToHomepage = () => this.props.history.push("/");
 
   sendLoginForm = data => {
-    const { sendLoginData } = this.props;
 
     sendLoginData(data).then(({ error }) => {
       if (error) {
@@ -68,7 +69,7 @@ class LoginPage extends React.Component {
   };
 
   onChangeHandler = event => {
-    const elementId = event.target.email;
+    const elementId = event.target.name;
     const elementValue = event.target.value;
 
     this.setState({
