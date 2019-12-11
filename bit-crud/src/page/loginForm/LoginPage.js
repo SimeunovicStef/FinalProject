@@ -6,7 +6,7 @@ import Title from '../../components/title/Title'
 import Icon from '../../components/icon/Icon'
 import { Row } from '../../components/Row/Row'
 import { Link } from 'react-router-dom'
-
+import './login.scss'
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -83,12 +83,12 @@ const { errorMsg } = this.state;
             <div className='container'>
 
                 <form className='col s12'>
-                    <div className='wraper'>
+                    <div className='wraper RegistrationForm'>
                         <Icon className='lockLogo' />
                         <Title title="Sign In" className="title" />
                         <Row >
-                            <Input name="email" type="text" placeholder="Email Address*"  required onChange={this.onChangeHandler} />
-                            <Input name="password" type="password" placeholder="Password*" required onChange={this.onChangeHandler} />
+                            <Input name="email" type="text" placeholder="Email Address*" className="input" required onChange={this.onChangeHandler} />
+                            <Input name="password" type="password" placeholder="Password*" className='input' required onChange={this.onChangeHandler} />
                         </Row>
                         <Checkbox onChange={(d) => console.log(d)} label="Remember me" />
 
