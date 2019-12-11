@@ -9,9 +9,9 @@ const Main = (props) => {
     return (
         <main className="container">
             <Switch>
-            <Route path="/sign-in" component={LoginPage} />
+                <Route path="/sign-in" component={LoginPage} />
                 <Route path="/sign-up" component={RegistrationForm} />
-                <Route path="/dashboard" component={DashboardLanding}/>
+                <Route path="/dashboard" component={DashboardLanding} />
                 <Redirect to="/sign-in" />
 
             </Switch>
