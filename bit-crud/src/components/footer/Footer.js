@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { isUserLoggedIn } from '../../services/authServices'
 
 const Footer = (props) => {
@@ -24,4 +24,4 @@ const Footer = (props) => {
     </footer>
   )
 }
-export default Footer
+export default withRouter(Footer)

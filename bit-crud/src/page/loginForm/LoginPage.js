@@ -58,14 +58,15 @@ class LoginPage extends React.Component {
 
   sendLoginForm = data => {
 
-    sendLoginData(data).then(({ error }) => {
-      if (error) {
-        return this.setState({ errorMsg: error.message });
-      }
+    sendLoginData(data)
+      .then(({ error }) => {
+        if (error) {
+          return this.setState({ errorMsg: error.message });
+        }
 
-      this.resetLoginForm();
-      this.goToHomepage();
-    });
+        this.resetLoginForm();
+        this.goToHomepage();
+      });
   };
 
   onChangeHandler = event => {
