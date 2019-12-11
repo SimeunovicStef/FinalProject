@@ -21,14 +21,12 @@ class Posts extends React.Component {
 
     render() {
 
-        console.log(this.state.posts);
-
         return (
             <>
                 <Title title='All posts' />
                 <div className='row'>
                     {this.state.posts.map((post) => {
-                        return <Card key={post.id} title={post.title} src={post.imageUrl} description={post.text} />
+                        return <Card userId={post.userId} key={post.id} title={post.title} src={post.imageUrl} description={post.text} id={post.id} />
                     })}
                 </div>
             </>

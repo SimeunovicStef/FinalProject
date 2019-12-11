@@ -3,6 +3,7 @@ button:not(:disabled) {
     color: white;
     border: none;
     border-radius: 20px;
+    /* sdf */
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;

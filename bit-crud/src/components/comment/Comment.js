@@ -1,6 +1,7 @@
 import React from 'react'
 import { commentsService } from '../../services/commentsService'
 
+
 class Comments extends React.Component {
     constructor(props) {
         super(props)
@@ -17,8 +18,9 @@ class Comments extends React.Component {
     render() {
         return (
             <>
-
+                <span>Comments:{this.state.comments}</span>
             </>
         )
     }
 }
+export default Comments

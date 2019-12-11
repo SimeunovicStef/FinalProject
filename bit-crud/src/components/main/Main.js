@@ -15,7 +15,7 @@ const Main = (props) => {
                 <Route exact path="/" component={Posts} />
                 <Route path="/sign-in" component={LoginPage} />
                 <Route path="/sign-up" component={RegistrationForm} />
-                <Redirect to="/sign-up" />
+                <Redirect to="/sign-in" />
 
             </Switch>
         </main>

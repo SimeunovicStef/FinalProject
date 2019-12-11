@@ -13,9 +13,6 @@ class PostService {
                     return new Post(post)
                 })
             })
-
     }
-
-
 }
 export const postService = new PostService()
