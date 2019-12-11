@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import LoginPage from '../../page/loginForm/LoginPage'
 
 import RegistrationForm from '../../page/RegistrationForm/RegistrationForm';
-
+import DashboardLanding from '../../page/Dashboard/DashboardLanding'
 
 const Main = (props) => {
     return (
@@ -11,6 +11,7 @@ const Main = (props) => {
             <Switch>
             <Route path="/sign-in" component={LoginPage} />
                 <Route path="/sign-up" component={RegistrationForm} />
+                <Route path="/dashboard" component={DashboardLanding}/>
                 <Redirect to="/sign-in" />
 
             </Switch>
