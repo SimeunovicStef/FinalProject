@@ -1,17 +1,15 @@
 import React from "react";
-import Icon from '../../components/icon/Icon'
-import Title from '../../components/title/Title'
 
-const DashboardEnclose= ({ icon, number, text }) => (
-<div >
-        <div className="dash_icon">
-          <Icon icon={icon} />
-        </div>
-   
-        <Title text={number} />
-    
-        <Title text={text} />
+const DashboardEnclose = (props) => (
+  <>
+    <div className='dashBord'>
+      <div >
+        <img src={props.src}></img>
       </div>
-  )
-  
-  export default DashboardEnclose;
+      <p>{props.number}</p>
+      <p>{props.text}</p>
+    </div>
+  </>
+)
+
+export default DashboardEnclose;

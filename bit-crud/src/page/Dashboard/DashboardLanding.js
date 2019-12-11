@@ -5,7 +5,7 @@ import Dashboard from "./Dashboard";
 
 const DashboardLanding = () => (
   <div className="container">
-    <Title />
+    <Title title="Dashboard" />
     <Dashboard />
 
   </div>
