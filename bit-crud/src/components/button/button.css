@@ -1,12 +1,6 @@
-button:not(:disabled) {
-    background-color: #4154b3;
+Button {
+    background-color: #2278cf;
     color: white;
-    padding: 10px;
-    width: 100%;
     border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    border-radius: 20px;
 }
-
