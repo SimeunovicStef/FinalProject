@@ -5,6 +5,7 @@ import LoginPage from '../../page/loginForm/LoginPage'
 import RegistrationForm from '../../page/RegistrationForm/RegistrationForm';
 import Posts from '../../page/Posts/Posts';
 import About from '../../page/About/About'
+import DashboardLanding from '../../page/Dashboard/DashboardLanding'
 
 
 const Main = (props) => {
@@ -15,6 +16,7 @@ const Main = (props) => {
                 <Route exact path="/" component={Posts} />
                 <Route path="/sign-in" component={LoginPage} />
                 <Route path="/sign-up" component={RegistrationForm} />
+                <Route path="/dashboard" component={DashboardLanding} />
                 <Redirect to="/sign-in" />
 
             </Switch>

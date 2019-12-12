@@ -1,0 +1,10 @@
+.dashBord {
+    width: 25%;
+    text-align: center;
+    border: solid 1px grey;
+    margin: 2%;
+}
+
+.dashBord img {
+    width: 30%;
+}
