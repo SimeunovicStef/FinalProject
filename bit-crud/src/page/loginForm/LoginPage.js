@@ -54,7 +54,7 @@ class LoginPage extends React.Component {
     });
   };
 
-  goToHomepage = () => this.props.history.push("/");
+  goToHomepage = () => this.props.history.push("/dashboard");
 
   sendLoginForm = data => {
 

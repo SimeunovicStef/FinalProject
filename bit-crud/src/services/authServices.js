@@ -1,7 +1,7 @@
 import { http } from "./fetchService";
 
 export const logOut = () => {
-    localStorage.removeItem("sessionId");
+    localStorage.removeItem("token");
 }
 
 
@@ -12,7 +12,6 @@ export const sendLoginData = (payload) => {
         .then(data => {
 
             localStorage.setItem("token", data.accessToken)
-            console.log(data);
             return data
         })
 }
