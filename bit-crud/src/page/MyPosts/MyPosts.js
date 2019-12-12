@@ -12,22 +12,29 @@ class MyPosts extends React.Component {
         }
     }
     fetchPosts() {
-        postService.getPosts()
-            .then(posts => { this.setState({ posts }) })
+        return postService.getPosts()
+            .then(posts => {
+                this.setState({
+                    posts: posts.filter(post => post.userId === JSON.parse(localStorage.getItem("userId")))
+                });
+            }
+            )
     }
 
 
     componentDidMount() {
-        this.fetchPosts();
+        this.fetchPosts()
     }
 
     render() {
         return (
             <div>
-                {this.state.posts.map((post) => {
-                    return <MyPostCard title={post.title} />
-                })}
-            </div>
+                {
+                    this.state.posts.map((post) => {
+                        return <MyPostCard title={post.title} />
+                    })
+                }
+            </div >
         )
     }
 }
