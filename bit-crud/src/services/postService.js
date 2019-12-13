@@ -4,7 +4,6 @@ import { Post } from '../models/Post'
 
 class PostService {
 
-
     getPosts() {
 
         return http.get(postsEndpoint)
