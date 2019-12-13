@@ -1,7 +1,7 @@
 import React from 'react'
 import { postService } from '../../services/postService'
 import MyPostCard from './MyPostCard'
-
+import { getUserId } from '../../services/authServices';
 
 class MyPosts extends React.Component {
     constructor() {
@@ -15,7 +15,7 @@ class MyPosts extends React.Component {
         return postService.getPosts()
             .then(posts => {
                 this.setState({
-                    posts: posts.filter(post => post.userId === JSON.parse(localStorage.getItem("userId")))
+                    posts: posts.filter(post => post.userId === getUserId())
                 });
             }
             )
