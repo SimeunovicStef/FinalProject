@@ -9,6 +9,8 @@ import {
 
     from '../../services/fetchService'
 import './CreatePost.css'
+import {postService} from '../../services/postService'
+
 
 class CreatePost extends React.Component {
 
@@ -34,18 +36,30 @@ class CreatePost extends React.Component {
 
         http.post("http://crud-api.hypetech.xyz/v1/posts", postInfo)
     }
+    deletePost = () => {
+        let data = {}
+        let token = localStorage.getItem("currentUser")
+        postService.deleteSinglePost(this.props.match.params.id, data, token)
+        this.props.history.push('/myposts')
+    }
 
     render() {
-        return (<> <div className='createwraper'> <Input name='title' type='text' placeholder='Title' className='halfInpOne' /> <Input name='subtitle' type='text' placeholder='Subtitle' className='halfInpTwo' /> <Input name='imageUrl' type='text' placeholder='Image URL' className='' /> <SwitchButton /> <TextArea name='text' onChange={
+        return (<> <div className='createwraper'>
+             <Input onChange={(name, value) => this.onInputChange(name, value)} name='title' type='text' placeholder='Title' className='halfInpOne' />
+              <Input onChange={(name, value) => this.onInputChange(name, value)} name='subtitle' type='text' placeholder='Subtitle' className='halfInpTwo' />
+               <Input onChange={(name, value) => this.onInputChange(name, value)} name='imageUrl' type='text' placeholder='Image URL' className='' />
+                <SwitchButton /> 
+        <TextArea onChange={(name, value) => this.onInputChange(name, value)} name='text' onChange={
             (name, value) => this.onInputChange(name, value)
         }
 
-        /> <a class="waves-effect waves-light btn saveButton"
+        /> 
+        <a class="waves-effect waves-light btn saveButton"
             text="Save" color="green" onClick={
                 () => this.onSaveClick()
             }
 
-        >SAVE</a> <a class="waves-effect waves-light btn deleteButton">DELETE</a> </div> </>)
+        >SAVE</a> <a class="waves-effect waves-light btn"  onClick={()=> this.deletePost()}>DELETE</a> </div> </>)
     }
 }
 

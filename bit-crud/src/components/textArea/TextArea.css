@@ -1,0 +1,19 @@
+.textArea {
+    border: none;
+    outline: none;
+    line-height: 1.4em;
+    padding: 0 1em;
+    border-bottom: 2px solid #808080; 
+    width: 100%;
+    resize: none;
+    position: relative;
+}
+.textArea:focus{
+    border-bottom: 2px solid green ;
+}
+.textArea::before{
+    content: "attr(placeholder)";
+    position: absolute;
+    top: 0;
+    left: 0;
+}

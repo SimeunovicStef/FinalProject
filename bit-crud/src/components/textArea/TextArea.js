@@ -1,5 +1,5 @@
 import React from 'react'
-// import './TextArea.css'
+import './TextArea.css'
 
 const TextArea = ({ onChange, name, value }) => {
     return (
