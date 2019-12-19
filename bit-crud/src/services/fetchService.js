@@ -17,6 +17,14 @@ class FetchService {
         })
             .then(response => response.json())
     }
+    put (url, data) {
+        return fetch(url, {
+            method: 'put',
+            body: JSON.stringify(data),
+            headers:requestHeader
+        })
+        .then(response=> response.json())
+    }
 }
 
 export const http = new FetchService()

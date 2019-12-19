@@ -15,6 +15,14 @@ import {postService} from '../../services/postService'
 class CreatePost extends React.Component {
 
 
+    state = {
+        status: "",
+        title: "",
+        subtitle: "",
+        photo: "",
+        content: ""
+    }
+
 
 
 
@@ -27,17 +35,27 @@ class CreatePost extends React.Component {
     }
 
     onSaveClick() {
-        const postInfo = {
+        let postInfo = {
+            isPublic: this.state.status,
             title: this.state.title,
             subtitle: this.state.subtitle,
-            imageUrl: this.state.imageUrl,
-            text: this.state.text
+            imagconsteUrl: this.state.photo,
+            text: this.state.content
         }
 
         http.post("http://crud-api.hypetech.xyz/v1/posts", postInfo)
     }
+
+
     deletePost = () => {
-        let data = {}
+        let data = {
+            // sid: this.state.sid,
+            // title: this.state.title,
+            // subtitle: this.state.subtitle,
+            // imageUrl: this.state.imageUrl,
+            // text: this.state.text
+        
+        }
         let token = localStorage.getItem("currentUser")
         postService.deleteSinglePost(this.props.match.params.id, data, token)
         this.props.history.push('/myposts')
