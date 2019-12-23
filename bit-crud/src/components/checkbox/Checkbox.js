@@ -1,15 +1,12 @@
 import React from 'react'
 
 const Checkbox = (props) => {
-    const onChangeHandler = (event) => {
-        props.onChange(event.target.checked)
-    }
 
+    const onChangeHandler = (e) => {
+        props.onChange(e.target.checked)
+    }
     return (
-        <label className={props.className}>
-            <input type='checkbox' onChange={onChangeHandler} />
-            <span><b>{props.label}</b></span>
-        </label>
+        <input type="checkbox" checked={props.checked} className={props.nameClass} onChange={onChangeHandler} ></input>
     )
 }
 

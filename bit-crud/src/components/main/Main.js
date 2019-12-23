@@ -1,7 +1,6 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import LoginPage from '../../page/loginForm/LoginPage'
-
 import RegistrationForm from '../../page/RegistrationForm/RegistrationForm';
 import Posts from '../../page/Posts/Posts';
 import About from '../../page/About/About'
@@ -14,6 +13,7 @@ const Main = (props) => {
     return (
         <main className="container">
             <Switch>
+                
                 <Route path='/myposts' component={MyPostLanding} />
                 <Route path='/createpost' component={Createpost} />
                 <Route exact path="/about" component={About} />

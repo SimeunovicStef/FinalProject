@@ -1,14 +1,17 @@
 import React from 'react'
 import './TextArea.css'
 
-const TextArea = ({ onChange, name, value }) => {
+const TextArea = (props) => {
+    const onChangeHandler = (e) => {
+        props.onChange(e.target.value)
+    }
     return (
         <textarea
-            name={name}
-            value={value}
-            onChange={e => {
-                onChange(name, e.target.value);
-            }} className="textArea"> </textarea>
+            name={props.name}
+            value={props.value}
+            placeholder={props.placeholder} 
+            onChange={onChangeHandler}
+            className="textArea"></textarea>
     )
 }
 

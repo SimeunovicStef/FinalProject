@@ -9,6 +9,12 @@ class PostService {
         const url = `http://crud-api.hypetech.xyz/v1/posts/${id}`
         return http.post(url,data,token,'DELETE')
     } 
+
+    createPost = (data, token) => {
+        const url = "http://crud-api.hypetech.xyz/v1/posts"
+        return http.post(url, data, token)
+    }
+
     getPosts() {
 
         return http.get(postsEndpoint)
@@ -17,8 +23,6 @@ class PostService {
                     return new Post(post)
                 })
             })
-            
-
     }
 
 
