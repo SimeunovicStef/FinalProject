@@ -4,6 +4,7 @@ import TextArea from '../../components/textArea/TextArea'
 import './CreatePost.css'
 import {postService} from '../../services/postService'
 import ButtonSD from '../../components/ButtonSD/ButtonSD'
+import Title from '../../components/title/Title'
 
 class CreatePost extends React.Component {
 
@@ -44,6 +45,7 @@ class CreatePost extends React.Component {
                 setTimeout(() => this.props.history.push("/myposts"), 2000)
             })
     }
+
     deletePost = () => {
         let data = {}
         let token = localStorage.getItem("token")
@@ -55,6 +57,7 @@ class CreatePost extends React.Component {
         return (
         <> 
         <div className='createwraper'>
+            <Title title="Create Post" />
             <Input onChange={this.getTitle} name='title' type='text' placeholder='Title' className='halfInpOne' />
             <Input onChange={this.getSubtitle} name='subtitle' type='text' placeholder='Subtitle' className='halfInpTwo' />
             <Input onChange={this.getImage} name='imageUrl' type='text' placeholder='Image URL' className='' />
