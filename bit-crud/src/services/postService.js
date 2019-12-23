@@ -7,8 +7,19 @@ class PostService {
 
     deleteSinglePost  = (id,data,token) => {
         const url = `http://crud-api.hypetech.xyz/v1/posts/${id}`
-        return http.post(url,data,token,'DELETE')
+        return http.delete(url,data,token)
     } 
+
+    createPost = (data, token) => {
+        const url = "http://crud-api.hypetech.xyz/v1/posts"
+        return http.post(url, data, token)
+    }
+
+    updatePost = (id, data, token) => {
+        const url = `http://crud-api.hypetech.xyz/v1/posts/${id}`
+        return http.put(url, data, token)
+    }
+
     getPosts() {
 
         return http.get(postsEndpoint)
@@ -17,8 +28,6 @@ class PostService {
                     return new Post(post)
                 })
             })
-            
-
     }
 
 

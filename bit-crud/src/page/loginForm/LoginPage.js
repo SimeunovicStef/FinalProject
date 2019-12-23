@@ -69,14 +69,14 @@ class LoginPage extends React.Component {
       });
   };
 
-  onChangeHandler = event => {
-    const elementId = event.target.name;
-    const elementValue = event.target.value;
+  getEmail = (x) => {
+    this.setState({email: x})
+  }
 
-    this.setState({
-      [elementId]: elementValue
-    });
-  };
+  getPassword = (x) => {
+    this.setState({password: x})
+  }
+
 
 
   render() {
@@ -89,8 +89,8 @@ class LoginPage extends React.Component {
             <Icon className='lockLogo' />
             <Title title="Sign In" className="title" />
             <Row >
-              <Input name="email" type="text" placeholder="Email Address*" className="input" required onChange={this.onChangeHandler} />
-              <Input name="password" type="password" placeholder="Password*" className='input' required onChange={this.onChangeHandler} />
+              <Input name="email" type="text" placeholder="Email Address*" className="input" required onChange={this.getEmail} />
+              <Input name="password" type="password" placeholder="Password*" className='input' required onChange={this.getPassword} />
             </Row>
             <Checkbox onChange={(d) => console.log(d)} label="Remember me" />
 
