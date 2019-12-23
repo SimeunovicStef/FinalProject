@@ -27,7 +27,7 @@ class CreatePost extends React.Component {
     }
 
     getText = (x) => {
-        this.setState({ text: "bla" })
+        this.setState({ text: x })
     }
 
     saveClick = () => {
@@ -35,18 +35,18 @@ class CreatePost extends React.Component {
             isPublic: true,
             title: this.state.title,
             subtitle: this.state.subtitle,
-            image: this.state.image,
-            text: "bla bla"
+            imageUrl: this.state.image,
+            text: this.state.text
         }
-        let token = localStorage.getItem("currentUser")
+        let token = localStorage.getItem("token")
         postService.createPost(data, token)
             .then(() => {
-                setTimeout(() => this.props.history.push("/myposts"), 1000)
+                setTimeout(() => this.props.history.push("/myposts"), 2000)
             })
     }
     deletePost = () => {
         let data = {}
-        let token = localStorage.getItem("currentUser")
+        let token = localStorage.getItem("token")
         postService.deleteSinglePost(this.props.match.params.id, data, token)
         this.props.history.push('/myposts')
     }
@@ -60,7 +60,7 @@ class CreatePost extends React.Component {
             <Input onChange={this.getImage} name='imageUrl' type='text' placeholder='Image URL' className='' />
             <TextArea placeholder='Textarea' onChange={this.getText} name='text' /> 
             <ButtonSD title='Save' onClick={this.saveClick} className='Save'  /> 
-            <ButtonSD title='Delete' className='Delete' />
+            <ButtonSD title='Delete' className='Delete' onChange={this.deletePost} />
         </div> 
         </>)
     }
