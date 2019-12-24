@@ -31,7 +31,7 @@ class MyPosts extends React.Component {
             <div>
                 {
                     this.state.posts.map((post) => {
-                        return <MyPostCard title={post.title} />
+                        return <MyPostCard title={post.title} postId={post.id} />
                     })
                 }
             </div >
