@@ -1,65 +1,71 @@
 import React from 'react'
 import Input from '../../components/input/Input'
 import TextArea from '../../components/textArea/TextArea'
-import SwitchButton from '../../components/SwitchButton/SwitchButton'
-
-import {
-    http
-}
-
-    from '../../services/fetchService'
 import './CreatePost.css'
 import {postService} from '../../services/postService'
-
+import ButtonSD from '../../components/ButtonSD/ButtonSD'
+import Title from '../../components/title/Title'
 
 class CreatePost extends React.Component {
 
-
-
-
-
-    onInputChange(name, value) {
-        this.setState({
-            [name]: value
-        }
-
-        )
+    state = {
+        title: '',
+        subtitle: '',
+        image: '',
+        text: ''
     }
 
-    onSaveClick() {
-        const postInfo = {
+    getTitle = (x) => {
+        this.setState({ title: x })
+    }
+
+    getSubtitle = (x) => {
+        this.setState({ subtitle: x })
+    }
+
+    getImage = (x) => {
+        this.setState({ image: x })
+    }
+
+    getText = (x) => {
+        this.setState({ text: x })
+    }
+
+    saveClick = () => {
+        const data = {
+            isPublic: true,
             title: this.state.title,
             subtitle: this.state.subtitle,
-            imageUrl: this.state.imageUrl,
+            imageUrl: this.state.image,
             text: this.state.text
         }
-
-        http.post("http://crud-api.hypetech.xyz/v1/posts", postInfo)
+        let token = localStorage.getItem("token")
+        postService.createPost(data, token)
+            .then(() => {
+                setTimeout(() => this.props.history.push("/myposts"), 2000)
+            })
     }
+
     deletePost = () => {
         let data = {}
-        let token = localStorage.getItem("currentUser")
+        let token = localStorage.getItem("token")
         postService.deleteSinglePost(this.props.match.params.id, data, token)
         this.props.history.push('/myposts')
     }
 
     render() {
-        return (<> <div className='createwraper'>
-             <Input onChange={(name, value) => this.onInputChange(name, value)} name='title' type='text' placeholder='Title' className='halfInpOne' />
-              <Input onChange={(name, value) => this.onInputChange(name, value)} name='subtitle' type='text' placeholder='Subtitle' className='halfInpTwo' />
-               <Input onChange={(name, value) => this.onInputChange(name, value)} name='imageUrl' type='text' placeholder='Image URL' className='' />
-                <SwitchButton /> 
-        <TextArea onChange={(name, value) => this.onInputChange(name, value)} name='text' onChange={
-            (name, value) => this.onInputChange(name, value)
-        }
-
-        /> 
-        <a class="waves-effect waves-light btn saveButton"
-            text="Save" color="green" onClick={
-                () => this.onSaveClick()
-            }
-
-        >SAVE</a> <a class="waves-effect waves-light btn"  onClick={()=> this.deletePost()}>DELETE</a> </div> </>)
+        return (
+        <> 
+        <div className='createwraper'>
+            <Title title="Create Post" />
+            <Input onChange={this.getTitle} name='title' type='text' placeholder='Title' className='halfInpOne' />
+            <Input onChange={this.getSubtitle} name='subtitle' type='text' placeholder='Subtitle' className='halfInpTwo' />
+            <Input onChange={this.getImage} name='imageUrl' type='text' placeholder='Image URL' className='' />
+            <TextArea placeholder='Textarea' onChange={this.getText} name='text' /> 
+            <ButtonSD title='Save' onClick={this.saveClick} className='Save'  /> 
+            <ButtonSD title='Delete' className='Delete' onChange={this.deletePost} />
+        </div> 
+        </>)
     }
 }
 

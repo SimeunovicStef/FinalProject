@@ -30,8 +30,8 @@ class MyPosts extends React.Component {
         return (
             <div>
                 {
-                    this.state.posts.map((post) => {
-                        return <MyPostCard title={post.title} />
+                    this.state.posts.map((post, id) => {
+                        return <MyPostCard title={post.title} key={id} />
                     })
                 }
             </div >

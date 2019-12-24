@@ -10,7 +10,7 @@ const MyPostLanding = () => (
         <Link to='/createpost'>
             <a class="waves-effect waves-light btn newPost">NEW POST</a>
         </Link>
-        <Title title="AllPosts" />
+        <Title title="My Posts" />
 
         <MyPosts />
 
