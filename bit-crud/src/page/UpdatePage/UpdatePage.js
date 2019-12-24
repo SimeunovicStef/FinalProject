@@ -10,7 +10,7 @@ class UpdatePost extends React.Component {
     this.state = {
       title: "",
       subtitle: "",
-      image: "",
+      imageUrl: "",
       text: ""
     }
   }
@@ -20,8 +20,9 @@ class UpdatePost extends React.Component {
         .then(result => this.setState({
           title: result.title,
           subtitle: result.subtitle,
-          image: result.image,
-          text: result.text
+          imageUrl: result.imageUrl,
+          text: result.text,
+          sid: result.sid
         }))
   }
   getTitle = (x) => {
@@ -33,7 +34,7 @@ class UpdatePost extends React.Component {
   }
 
   getImage = (x) => {
-    this.setState({ image: x })
+    this.setState({ imageUrl: x })
   }
 
   getText = (x) => {
@@ -42,6 +43,7 @@ class UpdatePost extends React.Component {
 
   updatePost = () => {
     let data = {
+        sid: this.state.sid,
         title: this.state.title,
         subtitle: this.state.subtitle,
         imageUrl: this.state.image,
@@ -55,6 +57,7 @@ class UpdatePost extends React.Component {
 
   deletePost = () => {
     let data = {
+      sid: this.state.sid,
       title: this.state.title,
       subtitle: this.state.subtitle,
       imageUrl: this.state.image,
@@ -76,19 +79,19 @@ class UpdatePost extends React.Component {
         <div>
           <Title title="Update Post" />
           <p><span>Title:</span><br />
-          <Input type='text' placeholder='Enter Title' value={this.state.value} onChange={this.getTitle} />
+          <Input type='text' placeholder='Enter Title' value={this.state.title} onChange={this.getTitle} />
           </p>
           <p><span>Subtitle:</span><br />
-          <Input type='text' placeholder='Enter Subtitle' value={this.state.value} onChange={this.getSubtitle} />
+          <Input type='text' placeholder='Enter Subtitle' value={this.state.subtitle} onChange={this.getSubtitle} />
           </p>
           <p><span>Image:</span><br />
-          <Input type='text' placeholder='Enter Image URL' value={this.state.value} onChange={this.getImage} />
+          <Input type='text' placeholder='Enter Image URL' value={this.state.imageUrl} onChange={this.getImage} />
           </p>
           <p><span>Text:</span><br />
-          <Input type='text' placeholder='Enter Text Post' value={this.state.value} onChange={this.getText} />
+          <Input type='text' placeholder='Enter Text Post' value={this.state.text} onChange={this.getText} />
           </p>
-          <ButtonSD title="Update" onChange={this.updatePost} className="Save" />
-          <ButtonSD title="Delete" onChange={this.deletePost} className="Delete" />
+          <ButtonSD title="Update" onClick={this.updatePost} className="Save" />
+          <ButtonSD title="Delete" onClick={this.deletePost} className="Delete" />
         </div>
       </>
     )

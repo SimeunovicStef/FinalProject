@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 const MyPostCard = (props) => {
 
-    const id = props.data
+    const id = props.postId
 
     return (
         <>
