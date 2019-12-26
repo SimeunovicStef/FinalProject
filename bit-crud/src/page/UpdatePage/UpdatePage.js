@@ -1,10 +1,10 @@
 import React from 'react'
 import {postService} from '../../services/postService'
+
 import Title from '../../components/title/Title'
 import Input from '../../components/input/Input'
 import ButtonSD from '../../components/ButtonSD/ButtonSD'
 import validatePost from '../../services/postValidation'
-
 
 class UpdatePost extends React.Component {
   constructor(props) {
@@ -12,19 +12,28 @@ class UpdatePost extends React.Component {
     this.state = {
       title: "",
       subtitle: "",
+
       imageUrl: "",
+
+      
+
       text: ""
     }
   }
   componentDidMount() {
-    let token = localStorage.getItem("token")
+
+    let token = localStorage.getItem("currentUser")
+
     postService.fetchSinglePost(this.props.match.params.id, token)
         .then(result => this.setState({
           title: result.title,
           subtitle: result.subtitle,
+
           imageUrl: result.imageUrl,
           text: result.text,
           sid: result.sid
+
+
         }))
   }
   getTitle = (x) => {
@@ -36,7 +45,10 @@ class UpdatePost extends React.Component {
   }
 
   getImage = (x) => {
+
     this.setState({ imageUrl: x })
+
+    
   }
 
   getText = (x) => {
@@ -45,6 +57,7 @@ class UpdatePost extends React.Component {
 
   updatePost = () => {
     let data = {
+
         sid: this.state.sid,
         title: this.state.title,
         subtitle: this.state.subtitle,
@@ -101,5 +114,6 @@ class UpdatePost extends React.Component {
       </>
     )
   }
-}
+
+
 export default UpdatePost

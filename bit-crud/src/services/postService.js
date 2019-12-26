@@ -20,10 +20,12 @@ class PostService {
         return http.put(url, data, token)
     }
 
+
     fetchSinglePost = (id, token) => {
         const requestUrl = `http://crud-api.hypetech.xyz/v1/posts/${id}`
         return http.get(requestUrl)
     }
+
 
     getPosts() {
 

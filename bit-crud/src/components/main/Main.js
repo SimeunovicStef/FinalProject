@@ -15,7 +15,9 @@ const Main = (props) => {
         <main className="container">
             <Switch>
                 
+
                 <Route path='/updatepost/:id' component={UpdatePost} />
+
                 <Route path='/myposts' component={MyPostLanding} />
                 <Route path='/createpost' component={Createpost} />
                 <Route exact path="/about" component={About} />
