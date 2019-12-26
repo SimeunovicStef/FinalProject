@@ -114,6 +114,6 @@ class UpdatePost extends React.Component {
       </>
     )
   }
-
+}
 
 export default UpdatePost
