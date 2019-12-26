@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../../components/card/Card'
 import Title from '../../components/title/Title'
 import { postService } from '../../services/postService'
+import Search from '../../components/Search/Search'
 
 class Posts extends React.Component {
     constructor(props) {
@@ -17,7 +18,6 @@ class Posts extends React.Component {
                 this.setState({ posts })
             })
     }
-
 
     render() {
 
