@@ -3,6 +3,8 @@ import {postService} from '../../services/postService'
 import Title from '../../components/title/Title'
 import Input from '../../components/input/Input'
 import ButtonSD from '../../components/ButtonSD/ButtonSD'
+import validatePost from '../../services/postValidation'
+
 
 class UpdatePost extends React.Component {
   constructor(props) {
@@ -49,11 +51,14 @@ class UpdatePost extends React.Component {
         imageUrl: this.state.image,
         text: this.state.text
     }
-    let token = localStorage.getItem("token")
+    const validation = validatePost(data.title, data.subtitle, data.text)
+        let token = localStorage.getItem("currentUser")
 
-    postService.updatePost(this.props.match.params.id, data, token)
-    this.props.history.push('/myposts')
-  }
+        if (validation === true) {
+            postService.updatePost(this.props.match.params.id, data, token)
+            this.props.history.push('/myposts')
+  
+        }}
 
   deletePost = () => {
     let data = {
