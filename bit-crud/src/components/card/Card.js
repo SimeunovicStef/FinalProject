@@ -4,7 +4,6 @@ import AuthorName from '../Author/AuthorName'
 import CommentNumbers from '../commentsNumber/commentsNumber'
 
 const Card = (props) => {
-    console.log(props);
 
     return (<div className="card">
         <div className="cardText">

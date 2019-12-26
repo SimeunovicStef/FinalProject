@@ -7,6 +7,7 @@ import About from '../../page/About/About'
 import DashboardLanding from '../../page/Dashboard/DashboardLanding'
 import MyPostLanding from '../../page/MyPosts/MyPostLanding'
 import Createpost from '../../page/createPost/CreatePost'
+import UpdatePost from '../../page/UpdatePage/UpdatePage'
 
 
 const Main = (props) => {
@@ -14,6 +15,9 @@ const Main = (props) => {
         <main className="container">
             <Switch>
                 
+
+                <Route path='/updatepost/:id' component={UpdatePost} />
+
                 <Route path='/myposts' component={MyPostLanding} />
                 <Route path='/createpost' component={Createpost} />
                 <Route exact path="/about" component={About} />
